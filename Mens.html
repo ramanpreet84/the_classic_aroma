@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Classic Aroma</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar {
+            background: linear-gradient(90deg, #232526, #414345);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-brand, .nav-link {
+            color: white !important;
+            font-weight: bold;
+        }
+        .nav-link:hover {
+            color: #ffd700 !important;
+            text-decoration: underline;
+        }
+
+        .featured-products img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.4s ease-in-out;
+        }
+        .featured-products .card {
+            border: 2px solid transparent;
+            border-image: linear-gradient(to right, #00b09b, #96c93d) 1;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 1s ease forwards;
+            background: #fff5f5;
+        }
+        .featured-products .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 18px 35px rgba(0,0,0,0.25);
+        }
+
+        .featured-products p {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .footer {
+            background: #333;
+            color: white;
+            padding: 20px 0;
+        }
+        .footer a {
+            color: #ff7eb3;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        #preloader {
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 9999;
+            width: 100%;
+            height: 100%;
+            background: white url('https://i.gifer.com/YCZH.gif') no-repeat center center;
+        }
+
+        .filter-buttons {
+            margin: 30px 0;
+            text-align: center;
+        }
+        .filter-buttons button {
+            margin: 0 5px;
+            transition: transform 0.3s;
+        }
+        .filter-buttons button:hover {
+            transform: scale(1.1);
+        }
+
+        .dark-mode {
+            background-color: #222;
+            color: #eee;
+        }
+        .dark-mode .navbar {
+            background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+        }
+        .dark-mode .card {
+            background-color: #333;
+            color: #fff;
+        }
+        .dark-mode .card-text{
+          background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    
+<div id="preloader"></div>
+
+<nav class="navbar navbar-expand-lg navbar-light p-3">
+    <div class="container">
+        <a class="navbar-brand" href="#"><img src="3507916.jpg" alt="Logo" width="50"> The Classic Aroma</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="perfume_homepage.html"><i class="fas fa-home"></i> Home</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="shopDropdown" role="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-shopping-bag"></i> Shop
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="Mens.html">Men's Perfumes</a></li>
+                        <li><a class="dropdown-item" href="women.html">Women's Perfumes</a></li>
+                        <li><a class="dropdown-item" href="unisex.html">Unisex</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li class="nav-item">
+                    <button class="btn btn-dark ms-3" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Featured Products Section -->
+<section class="container text-center mt-5 featured-products">
+    <h2>Featured Perfumes</h2>
+    <div class="row filter-buttons">
+        <div class="col-12">
+          <button class="btn btn-outline-primary"><a class="dropdown-item" href="Mens.html">Men</a></button>
+          <button class="btn btn-outline-danger"><a class="dropdown-item" href="women.html">Women</a></button>
+      
+        </div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-5">
+        <!-- Perfume Cards -->
+        <div class="col">
+            <div class="card h-100">
+                <img src="photo-1598634222670-87c5f558119c.avif" class="card-img-top" alt="Mystic Oud Perfume">
+                <div class="card-body">
+                    <h5 class="card-title">Mystic Oud</h5>
+                    <p class="card-text">A bold luxurious woody scent crafted for the modern man.</p>
+                    <a href="#" class="btn btn-dark w-100" onclick="showPopup()">Shop Now</a>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="col">
+            <div class="card h-100">
+                <img src="photo-1506915925765-ed31516b9080.avif" class="card-img-top" alt="Blue Ice Perfume">
+                <div class="card-body">
+                    <h5 class="card-title">Blue Ice</h5>
+                    <p class="card-text">A refreshing aquatic fragrance with crisp, clean vibes.</p>
+                    <a href="#" class="btn btn-dark w-100" onclick="showPopup()">Shop Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100">
+                <img src="photo-1458538977777-0549b2370168.avif" class="card-img-top" alt="Amber Noir Perfume">
+                <div class="card-body">
+                    <h5 class="card-title">Amber Noir</h5>
+                    <p class="card-text">A seductive blend of amber and leather for a bold statement.</p>
+                    <a href="#" class="btn btn-dark w-100" onclick="showPopup()">Shop Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100">
+                <img src="photo-1523293182086-7651a899d37f.avif" class="card-img-top" alt="Citrus Blaze Perfume">
+                <div class="card-body">
+                    <h5 class="card-title">Citrus Blaze</h5>
+                    <p class="card-text">A vibrant burst of citrus and vetiver for daytime energy.</p>
+                    <a href="#" class="btn btn-dark w-100" onclick="showPopup()">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-5">
+        <!-- Perfume Cards -->
+        <div class="col">
+            <div class="card h-100">
+                <img src="photo-9683-13187603.avif" class="card-img-top" alt="Urban Ranger Exude Perfume">
+                <div class="card-body">
+                    <h5 class="card-title">Urban Ranger Exude</h5>
+                    <p class="card-text">A spicy-woody fragrance with fiery pink peppers grounded by rich cedarwood and musk.</p>
+                    <a href="#" class="btn btn-dark w-100" onclick="showPopup()">Shop Now</a>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="col">
+            <div class="card h-100">
+                <img src="photo-1234556images.jpg" class="card-img-top" alt="Iron Will Perfume">
+                <div class="card-body">
+                    <h5 class="card-title">Iron Will</h5>
+                    <p class="card-text">A lively summery fragrance with a masculine scent that leaves a long-lasting impression.</p>
+                    <a href="#" class="btn btn-dark w-100" onclick="showPopup()">Shop Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100">
+                <img src="photo-884575images.jpg" class="card-img-top" alt="Maverick Perfume">
+                <div class="card-body">
+                    <h5 class="card-title">Maverick</h5>
+                    <p class="card-text">It has a long-lasting smell with a slightly spicy scent , making it great for special occasions. </p>
+                    <a href="#" class="btn btn-dark w-100" onclick="showPopup()">Shop Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100">
+                <img src="photo-626564614-612x612.jpg" class="card-img-top" alt="Outlaw Perfume">
+                <div class="card-body">
+                    <h5 class="card-title">Outlaw</h5>
+                    <p class="card-text">A bold, captivating fragrance for men,perfect for leaving a memorable impression.</p>
+                    <a href="#" class="btn btn-dark w-100" onclick="showPopup()">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</section>
+
+<!-- Signature Scents Table -->
+<div class="container mb-5">
+    <h4 class="mb-3">Our Signature Scents</h4>
+    <table class="table table-hover table-bordered shadow-sm">
+        <thead class="table-dark">
+            <tr>
+                <th>Perfume</th>
+                <th>Main Notes</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Mystic Oud</td><td>Oud, Spice</td><td>2000</td></tr>
+            <tr><td>Blue Ice</td><td>Aquatic, Fresh</td><td>1200</td></tr>
+            <tr><td>Amber Noir</td><td>Amber, Leather</td><td>3100</td></tr>
+            <tr><td>Citrus Blaze</td><td>Grapefruit, Vetiver</td><td>1200</td></tr>
+            <tr><td>Urban Ranger Exude</td><td>rich cedarwood, musk.</td><td>1900</td></tr>
+            <tr><td>Iron Will</td><td>plum, lemon, apple and bergamot</td><td> 1400</td></tr>
+            <tr><td>Maverick</td><td>White Florals & Aromatic</td><td>1400</td></tr>
+            <tr><td>Outlaw</td><td>Bergamot, Lavender, and Fir Balsam</td><td>1400</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Form -->
+<div class="container mb-5">
+    <h4 class="mb-3">Get a Personalized Recommendation</h4>
+    <form class="shadow-sm p-4 rounded-4 border bg-light">
+        <div class="mb-3">
+            <label for="nameInput" class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="nameInput" placeholder="Enter your name">
+        </div>
+        <div class="mb-3">
+            <label for="scentSelect" class="form-label">Preferred Scent Profile</label>
+            <select class="form-select" id="scentSelect">
+                <option selected>Select one</option>
+                <option value="woody">Woody</option>
+                <option value="fresh">Fresh</option>
+                <option value="spicy">Spicy</option>
+                <option value="citrus">Citrus</option>
+                <option value="oriental">Oriental</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Get Recommendation</button>
+    </form>
+</div>
+
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="cartModalLabel">🎉 Congratulations!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        This item has been successfully added to your cart!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">Continue Shopping</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer text-center">
+    <div class="container">
+        <p>© 2025 The Classic Aroma. All rights reserved. | <a href="#">Privacy Policy</a></p>
+    </div>
+</footer>
+
+<script>
+  function showPopup() {
+    $('#cartModal').modal('show');
+  }
+</script>
+<script>
+    window.addEventListener('load', function () {
+        document.getElementById("preloader").style.display = "none";
+    });
+
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+    }
+</script>
+
+</body>
+</html>
