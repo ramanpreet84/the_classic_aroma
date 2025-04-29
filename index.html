@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The classic aroma</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar {
+            background: linear-gradient(90deg, #232526, #414345);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-brand, .nav-link {
+            color: white !important;
+            font-weight: bold;
+        }
+        .nav-link:hover {
+            color: #ffd700 !important;
+            text-decoration: underline;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 65vh;
+        }
+
+        .featured-products img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.4s ease-in-out;
+        }
+        .featured-products .card {
+            border: 2px solid transparent;
+            border-image: linear-gradient(to right, #00b09b, #96c93d) 1;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 1s ease forwards;
+            background: #fff5f5;
+        }
+        .featured-products .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 18px 35px rgba(0,0,0,0.25);
+        }
+
+        .featured-products p {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .footer {
+            background: #333;
+            color: white;
+            padding: 20px 0;
+        }
+        .footer a {
+            color: #ff7eb3;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        #preloader {
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 9999;
+            width: 100%;
+            height: 100%;
+            background: white url('https://i.gifer.com/YCZH.gif') no-repeat center center;
+        }
+
+        .filter-buttons {
+            margin: 30px 0;
+            text-align: center;
+        }
+        .filter-buttons button {
+            margin: 0 5px;
+            transition: transform 0.3s;
+        }
+        .filter-buttons button:hover {
+            transform: scale(1.1);
+        }
+
+        .dark-mode {
+            background-color: #222;
+            color: #eee;
+        }
+        .dark-mode .navbar {
+            background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+        }
+        .dark-mode .card {
+            background-color: #333;
+            color: #fff;
+        }
+        .dark-mode .card-text{
+          background-color: #333;
+            color: #fff;
+
+        }
+        .zoom-img {
+  transition: transform 0.3s ease;
+}
+
+.zoom-img:hover {
+  transform: scale(1.1); /* zoom in on hover */
+}
+
+    </style>
+</head>
+<body>
+    <div id="preloader"></div>
+
+    <nav class="navbar navbar-expand-lg navbar-light p-3">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="3507916.jpg" alt="Logo" width="50"> The classic aroma</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="perfume_homepage.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="shopDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-shopping-bag"></i> Shop
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Mens.html">Men's Perfumes</a></li>
+                            <li><a class="dropdown-item" href="women.html">Women's Perfumes</a></li>
+                            <li><a class="dropdown-item" href="unisex.html">Unisex</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li class="nav-item">
+                        <button class="btn btn-dark ms-3" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="perfumeCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img  src="pexels-mareefe-932577.jpg" alt="Perfume 1">
+            </div>
+            <div class="carousel-item">
+                <img src="pexels-valeriya-1961792.jpg" alt="Perfume 2">
+            </div>
+            <div class="carousel-item">
+                <img src="pexels-valeriya-965989.jpg" alt="Perfume 3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#perfumeCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#perfumeCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+
+    <section class="container text-center mt-5 featured-products">
+        <h2>Featured Perfumes</h2>
+        <div class="row filter-buttons">
+            <div class="col-12">
+               
+                <button class="btn btn-outline-primary"><a class="dropdown-item" href="Mens.html">Men</a></button>
+                <button class="btn btn-outline-danger"><a class="dropdown-item" href="women.html">Women</a></button>
+            
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img  src="premium_photo-1670445045282-36648e89af6b.avif" class="card-img-top zoom-img" alt="Perfume 1">
+                    <div class="card-body">
+                        <p>Elegant and timeless scent for any occasion.</p>
+                    </div>
+                </div>
+            </div> 
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="photo-1598634222670-87c5f558119c.avif" class="card-img-top  zoom-img" alt="Perfume 2">
+                    <div class="card-body">
+                        <p>A rich blend of floral and woody notes.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="photo-1458538977777-0549b2370168.avif" class="card-img-top  zoom-img" alt="Perfume 3">
+                    <div class="card-body">
+                        <p>Refreshing and invigorating fragrance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="photo-1599342166997-58552e91d9f5.avif" class="card-img-top  zoom-img" alt="Perfume 4">
+                    <div class="card-body">
+                        <p>Light and floral, perfect for daily wear.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="photo-1523293182086-7651a899d37f.avif" class="card-img-top  zoom-img" alt="Perfume 5">
+                    
+                    <div class="card-body">
+                        <p>Bold and daring with a musky touch.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="photo-1595425959632-34f2822322ce.avif" class="card-img-top  zoom-img" alt="Perfume 6">
+                    <div class="card-body">
+                        <p>Fruity and playful, a summer favorite.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer text-center mt-5">
+        <div class="container">
+            <p>&copy; 2025 Perfume Haven. All Rights Reserved.</p>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener("load", function () {
+            document.getElementById("preloader").style.display = "none";
+        });
+
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
+</body>
+</html>
